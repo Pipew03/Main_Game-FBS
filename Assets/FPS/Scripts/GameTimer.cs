@@ -1,21 +1,31 @@
 using UnityEngine;
 using TMPro;
+using Unity.FPS.Game;
 
 public class GameTimer : MonoBehaviour
 {
-    public float timeRemaining = 60f;
+    public float timeRemaining = 120f;
     public TextMeshProUGUI timerText;
+    public Health playerHealth;
+
+    bool timerEnded = false;
 
     void Update()
     {
+        if (timerEnded)
+            return;
+
         if (timeRemaining > 0f)
         {
             timeRemaining -= Time.deltaTime;
-            if (timeRemaining <= 0f)
-            {
-                timeRemaining = 0f;
-            }
+            timeRemaining = Mathf.Max(timeRemaining, 0f);
             UpdateTimerDisplay();
+        }
+
+        if (timeRemaining == 0f && !timerEnded)
+        {
+            timerEnded = true;
+            playerHealth.Kill();   // <-- removes all HP
         }
     }
 

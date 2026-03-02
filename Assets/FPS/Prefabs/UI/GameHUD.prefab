@@ -357,8 +357,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3bd6816063a7534fbcfc6cfa24ad0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTimer
-  timeRemaining: 60
+  timeRemaining: 61
   timerText: {fileID: 5264963979867792088}
+  playerHealth: {fileID: 0}
 --- !u!1 &575922401083677386
 GameObject:
   m_ObjectHideFlags: 0
