@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using Unity.FPS.Game;
+using System.Collections.Generic;
 
 public class GameTimer : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameTimer : MonoBehaviour
     public TextMeshProUGUI timerText;
     public Health playerHealth;
     public static float finalTime;   // <-- time saved for WinScene
+    public static List<float> completedTimes = new List<float>();
 
     bool timerEnded = false;
 
