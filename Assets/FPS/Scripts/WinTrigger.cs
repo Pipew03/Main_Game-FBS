@@ -10,6 +10,13 @@ public class WinTrigger : MonoBehaviour
 
         if (player != null)
         {
+            // Find the timer and save the remaining time
+            GameTimer timer = FindFirstObjectByType<GameTimer>();
+            if (timer != null)
+            {
+                GameTimer.finalTime = timer.timeRemaining;
+            }
+
             SceneManager.LoadScene("WinScene");
         }
     }

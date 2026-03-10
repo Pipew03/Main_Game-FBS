@@ -7,6 +7,7 @@ public class GameTimer : MonoBehaviour
     public float timeRemaining = 120f;
     public TextMeshProUGUI timerText;
     public Health playerHealth;
+    public static float finalTime;   // <-- time saved for WinScene
 
     bool timerEnded = false;
 
@@ -34,5 +35,10 @@ public class GameTimer : MonoBehaviour
         int minutes = Mathf.FloorToInt(timeRemaining / 60f);
         int seconds = Mathf.FloorToInt(timeRemaining % 60f);
         timerText.text = $"{minutes:00}:{seconds:00}";
+    }
+
+    public void SaveTime()
+    {
+        finalTime = timeRemaining;
     }
 }
